@@ -40,7 +40,10 @@ classColor.forEach((value) => {
 });
 
 function reload() {
-  document.location.reload(true);
+  const getPixels = document.querySelectorAll('.pixel');
+  getPixels.forEach((pixel) => {
+    pixel.style.background = 'white';
+  })
 }
 
 const button = document.querySelector('#clear-board');
@@ -66,7 +69,6 @@ function generatePixel(value) {
     criaPixel.className = 'pixel';
     pixelBoard.style.width = `${value * 40}px`;
     pixelBoard.appendChild(criaPixel);
-    console.log(i);
   }
   cliquezinho();
 }
